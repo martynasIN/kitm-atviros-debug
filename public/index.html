@@ -211,7 +211,7 @@ function tikrintiLaimėtoją(board) {
     if (
       board[a] !== null &&
       board[a] === board[b] &&
-      board[b] === board[b]            // KLAIDA: turėtų būti board[c]
+      board[b] === board[b]          
     ) {
       return { žaidėjas: board[a], linija: [a, b, c] };
     }
@@ -235,8 +235,8 @@ function atliktiEjimą(index) {
     state.gameOver = true;
     atvaizduoti();
   } else {
-    // Perjungti žaidėją
-    state.currentPlayer = state.currentPlayer === 'X' ? 'X' : 'O';   // KLAIDA: visada lieka 'X'
+    
+    state.currentPlayer = state.currentPlayer === 'X' ? 'X' : 'O';   
     atvaizduoti();
   }
 }
@@ -306,11 +306,9 @@ cells.forEach(cell => {
 
 document.getElementById('btnReset').addEventListener('click', resetZaidima);
 
-// ================================================================
-//  PALEIDIMAS
-// ================================================================
 
-paleidimoDemonstracija();   // KLAIDA: šią eilutę reikia ištrinti
+
+paleidimoDemonstracija();  
 atvaizduoti();
 </script>
 
